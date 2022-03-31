@@ -1,11 +1,10 @@
 package ru.alexx.belov.algorithmic_tsk.string;
 
 import io.quarkus.test.junit.QuarkusTest;
+import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
-import java.util.Stack;
 
 /**
  * https://leetcode.com/problems/valid-anagram/
@@ -16,13 +15,17 @@ class ValidAnagram {
     @Test
     void process() {
 
-        String s = "anagram"; String t = "nagaram";
-        s = "ac"; t = "bb";
+        TestHelperString helperString = new TestHelperString();
+        helperString.getTestEntityList().add(new TestEntity("anagram", "nagaram", true));
+        helperString.getTestEntityList().add(new TestEntity("ac", "bb", false));
 
-        System.out.println(isAnagram(s, t));
+        helperString.checker(helperString.testEntityList, r -> isAr(r));
 
     }
 
+    public boolean isAr(TestEntity r) {
+        return isAnagram(r.string1, r.string2);
+    }
 
     public boolean isAnagram(String s, String t) {
         if (s.length() != t.length()) {

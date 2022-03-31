@@ -1,2 +1,6 @@
-package ru.alexx.belov.algorithmic_tsk.string;public interface IMethod {
+package ru.alexx.belov.algorithmic_tsk.string;
+
+public interface IMethod {
+
+    boolean myMethod(TestEntity r);
 }
