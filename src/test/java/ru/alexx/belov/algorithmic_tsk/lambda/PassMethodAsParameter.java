@@ -1,4 +1,4 @@
-package ru.alexx.belov.lambda;
+package ru.alexx.belov.algorithmic_tsk.lambda;
 
 import io.quarkus.test.junit.QuarkusTest;
 import org.junit.jupiter.api.Test;
