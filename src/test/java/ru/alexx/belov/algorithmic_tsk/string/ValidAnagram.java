@@ -19,12 +19,9 @@ class ValidAnagram {
         helperString.getTestEntityList().add(new TestEntity("anagram", "nagaram", true));
         helperString.getTestEntityList().add(new TestEntity("ac", "bb", false));
 
-        helperString.checker(helperString.testEntityList, r -> isAr(r));
+        //helperString.checker(helperString.testEntityList, r -> isAr(r));
+        helperString.checker(helperString.testEntityList, (ra,rb) -> isAnagram((String) ra, (String) rb));
 
-    }
-
-    public boolean isAr(TestEntity r) {
-        return isAnagram(r.string1, r.string2);
     }
 
     public boolean isAnagram(String s, String t) {
