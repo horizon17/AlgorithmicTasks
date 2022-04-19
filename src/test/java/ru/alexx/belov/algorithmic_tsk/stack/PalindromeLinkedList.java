@@ -1,6 +1,7 @@
 package ru.alexx.belov.algorithmic_tsk.stack;
 
 import io.quarkus.test.junit.QuarkusTest;
+import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -15,13 +16,18 @@ import java.util.List;
 class PalindromeLinkedList {
 
 
+    // todo - use Stack!
     @Test
     void process() {
 
-        //ListNode listNode = new ListNode(1, new ListNode(2, new ListNode(2, new ListNode(1))));
-        ListNode listNode = new ListNode(1, new ListNode(2, new ListNode(2, new ListNode(3))));
+        ListNode listNode = new ListNode();
+        listNode = new ListNode(1, new ListNode(2, new ListNode(2, new ListNode(1))));
+        Assert.assertTrue(isPalindrome(listNode) == true);
 
-        System.out.println(isPalindrome(listNode));
+        listNode = new ListNode(1, new ListNode(2, new ListNode(2, new ListNode(3))));
+        Assert.assertTrue(isPalindrome(listNode) == false);
+
+        //System.out.println(isPalindrome(listNode));
 
     }
 
