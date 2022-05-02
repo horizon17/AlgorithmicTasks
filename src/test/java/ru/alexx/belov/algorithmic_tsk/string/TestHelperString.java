@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.BiFunction;
 import java.util.function.Consumer;
+import java.util.function.Function;
 
 /**
  * Helper with several functional interfaces
@@ -14,25 +15,31 @@ import java.util.function.Consumer;
 @Data
 public class TestHelperString {
 
-    List<TestEntity> testEntityList = new ArrayList<>();
+    List<AbstractTestEntity> testEntityList = new ArrayList<>();
 
-    public void checker(List<TestEntity> testEntities, BiFunction method) {
-        for (TestEntity nextEntity : testEntities) {
-            Assert.assertTrue(method.apply(nextEntity.string1, nextEntity.string2).equals(nextEntity.answer));
+    // Function Int for 2 parameters and return
+    public void checker(List<AbstractTestEntity> testEntities, BiFunction method) {
+        for (AbstractTestEntity next : testEntities) {
+            TestEntity nextTEnt = (TestEntity) next;
+            Assert.assertTrue(method.apply(nextTEnt.string1, nextTEnt.string2).equals(nextTEnt.answer));
         }
     }
 
-    public void checker(List<TestEntity> testEntities, IMethod method) {
-        for (TestEntity nextEntity : testEntities) {
-            Assert.assertTrue(nextEntity.answer == method.myMethod(nextEntity));
+    public void checker(List<AbstractTestEntity> testEntities, IMethod method) {
+        for (AbstractTestEntity abstractEntity : testEntities) {
+            TestEntity next = (TestEntity) abstractEntity;
+            Assert.assertTrue(next.answer == method.myMethod(next));
         }
     }
 
-//    public void checker(List<TestEntity1W> testEntities, IMethod method) {
-//        for (TestEntity1W nextEntity : testEntities) {
-//            Assert.assertTrue(nextEntity.answer == method.myMethod(nextEntity));
-//        }
-//    }
+    // Function Int for 1 parameter and return
+    public void checker(List<AbstractTestEntity> testEntities, Function method) {
+        for (AbstractTestEntity abstractEntity : testEntities) {
+            TestEntity1W next = (TestEntity1W) abstractEntity;
+            System.out.println(next.string1 + " is should be " + next.answer);
+            Assert.assertTrue(method.apply(next.string1).equals(next.answer));
+        }
+    }
 
 
 }

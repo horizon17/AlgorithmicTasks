@@ -6,7 +6,7 @@ import lombok.Data;
  * Working builder
  */
 @Data
-public class TestEntity extends AbstractTestEntity{
+public class TestEntity {
 
     String string1;
     String string2;
