@@ -10,7 +10,6 @@ import java.util.List;
 /**
  * https://leetcode.com/problems/plus-one/description/
  *
- *
  */
 @QuarkusTest
 class PlusOne {
@@ -18,11 +17,14 @@ class PlusOne {
     @Test
     void process() {
 
-        // 0,1,2,4,5,7      // 0,2,3,4,6,8,9
         int[] arr1 = new int [] {0,1,2,4,5,7};
         System.out.println(Arrays.toString((plusOne(arr1))));
 
+        arr1 = new int [] {0,2,3,4,6,8,9};
+        System.out.println(Arrays.toString((plusOne(arr1))));
 
+        arr1 = new int [] {1,1,2,1};
+        System.out.println(Arrays.toString((plusOne(arr1))));
 
     }
 
