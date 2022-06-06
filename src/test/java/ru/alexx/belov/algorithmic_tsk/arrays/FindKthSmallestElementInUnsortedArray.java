@@ -1,4 +1,4 @@
-package ru.alexx.belov.leetcode.arrays.sortAlgorithms;
+package ru.alexx.belov.algorithmic_tsk.arrays;
 
 import io.quarkus.test.junit.QuarkusTest;
 import org.junit.Assert;
@@ -14,7 +14,7 @@ import java.util.*;
  *
  */
 @QuarkusTest
-class mySort {
+class FindKthSmallestElementInUnsortedArray {
 
     /**
      *
