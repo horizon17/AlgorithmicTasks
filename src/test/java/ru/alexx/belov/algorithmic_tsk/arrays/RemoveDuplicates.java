@@ -4,9 +4,6 @@ import io.quarkus.test.junit.QuarkusTest;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * https://leetcode.com/problems/remove-duplicates-from-sorted-array/
  *
@@ -19,12 +16,11 @@ class RemoveDuplicates {
     @Test
     void process() {
 
-        // 0,1,2,4,5,7      // 0,2,3,4,6,8,9
         int[] arr1 = new int [] {0,0,1,1,1,2,2,3,3,4}; // Output: 5, nums = [0,1,2,3,4,_,_,_,_,_]
-        System.out.println((removeDuplicates(arr1)));
+        Assert.assertTrue(removeDuplicates(arr1) == 5);
 
         arr1 = new int [] { 0,1,2,4,5,7};
-        Assert.assertTrue(removeDuplicates(arr1) == 0);
+        Assert.assertTrue(removeDuplicates(arr1) == 6);
 
     }
 
