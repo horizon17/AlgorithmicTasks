@@ -3,17 +3,13 @@ package ru.alexx.belov.algorithmic_tsk.string;
 import lombok.Data;
 
 /**
- * Working builder
+ * abstract test
  */
 @Data
 public class AbstractTestEntity {
 
     String string1;
     boolean answer;
-
-
-
-
 
 
 
