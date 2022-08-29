@@ -3,7 +3,7 @@ package ru.alexx.belov.algorithmic_tsk.string;
 import lombok.Data;
 
 /**
- * Working builder
+ * two value input
  */
 @Data
 public class TestEntity extends AbstractTestEntity{

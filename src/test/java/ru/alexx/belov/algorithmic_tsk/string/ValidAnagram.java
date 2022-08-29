@@ -1,7 +1,6 @@
 package ru.alexx.belov.algorithmic_tsk.string;
 
 import io.quarkus.test.junit.QuarkusTest;
-import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
@@ -20,7 +19,7 @@ class ValidAnagram {
         helperString.getTestEntityList().add(new TestEntity("ac", "bb", false));
 
         //helperString.checker(helperString.testEntityList, r -> isAr(r));
-        helperString.checker(helperString.testEntityList, (ra,rb) -> isAnagram((String) ra, (String) rb));
+        helperString.checker(helperString.testEntityList, (ra, rb) -> isAnagram((String) ra, (String) rb));
 
     }
 
