@@ -13,6 +13,7 @@ import java.util.HashMap;
 class LongestCommonPrefixTest {
 
 
+    // todo - Horizontal scanning
     @Test
     void process() {
 
